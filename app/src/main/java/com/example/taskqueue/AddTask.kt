@@ -1,6 +1,5 @@
 package com.example.taskqueue
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,8 +22,8 @@ class AddTask : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             val name = binding.editTextTextMultiLine.text.toString()
-            val date = binding.editTextText5.text.toString()
-            val time = binding.editTextText4.text.toString()
+            val date = binding.editTextDate.text.toString()
+            val time = binding.editTextTime.text.toString()
             val b1 = Tasks(0, name, date, time)
             db.insertTask(b1)
 
