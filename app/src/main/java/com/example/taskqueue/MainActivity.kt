@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Delay the loading of activity_main2.xml after 2 seconds
+        // Delay the loading of activity_main3.xml after 2 seconds
         Handler().postDelayed({
-            startActivity(Intent(this, AddTask::class.java))
-            finish()
+            startActivity(Intent(this, MainActivity3::class.java))
+
         }, 2000) // 2000 milliseconds = 2 seconds
     }
 }

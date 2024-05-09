@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Task Queue</string>
+    <string name="quot_get_your_work_done_quot">\"Get your work done\"</string>
+    <string name="todo">TODO</string>
+    <string name="queue">queue</string>
+    <string name="task">task</string>
+    <string name="todo2">TODO</string>
+    <string name="add_to_tasks">Add to Tasks</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="task_name">Task Name</string>
+    <string name="todo3">TODO</string>
+    <string name="queue2">queue</string>
+    <string name="task3">task</string>
 </resources>

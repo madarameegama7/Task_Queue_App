@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="task"
+        android:text="@string/task"
         android:textColor="#2196F3"
         android:textColorLink="#2196F3"
         android:textSize="34sp"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:fontFamily="sans-serif-black"
-        android:text="queue"
+        android:text="@string/queue"
         android:textColor="#5C6A6C"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,14 +45,15 @@
         android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:srcCompat="@drawable/img" />
+        app:srcCompat="@drawable/img"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="&quot;Get your work done&quot;"
+        android:text="@string/quot_get_your_work_done_quot"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
