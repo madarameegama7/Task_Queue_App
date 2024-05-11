@@ -23,6 +23,6 @@ class MainActivity : AppCompatActivity() {
         val postDelayed = Handler().postDelayed({
             startActivity(Intent(this, MainActivity3::class.java))
 
-        }, 2000) // 2000 milliseconds = 2 seconds
+        }, 5000) // 2000 milliseconds = 2 seconds
     }
 }

@@ -1,12 +1,16 @@
 package com.example.taskqueue
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.taskqueue.TaskListModel.TaskListModel
 import com.example.taskqueue.databinding.ActivityAddTaskBinding
+import android.util.Log
+
 
 class AddTask : AppCompatActivity() {
 
@@ -21,14 +25,15 @@ class AddTask : AppCompatActivity() {
         db = TasksDatabaseHelper(this)
 
         binding.button.setOnClickListener {
+            Log.d("AddTask", "Button clicked")
             val name = binding.editTextTextMultiLine.text.toString()
             val date = binding.editTextDate.text.toString()
             val time = binding.editTextTime.text.toString()
-            val b1 = Tasks(0, name, date, time)
+            val b1 = TaskListModel(0, name, date, time)
             db.insertTask(b1)
 
             // Start MainActivity3 after adding task
-//            startActivity(Intent(this, MainActivity3::class.java))
+            startActivity(Intent(this, MainActivity3::class.java))
 
             // Finish the current activity
             finish()
