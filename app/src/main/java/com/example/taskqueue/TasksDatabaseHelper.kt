@@ -17,28 +17,29 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
         private const val COLUMN_TIME = "time"
     }
 
-    override fun onCreate(p0: SQLiteDatabase?) {
+    override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery =
             "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY,$COLUMN_NAME TEXT,$COLUMN_DATE TEXT,$COLUMN_TIME TEXT)"
-        p0?.execSQL(createTableQuery)
+        db?.execSQL(createTableQuery)
     }
 
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
-        p0?.execSQL(dropTableQuery)
-        onCreate(p0)
+        db?.execSQL(dropTableQuery)
+        onCreate(db)
     }
 
     //insert
-    fun insertTask(task: TaskListModel): Boolean {
+    fun insertTask(task: TaskListModel){
         val db = this.writableDatabase
-        val values = ContentValues()
-        values.put(COLUMN_NAME, task.name)
-        values.put(COLUMN_DATE, task.date)
-        values.put(COLUMN_TIME, task.time)
-        val _Success = db.insert(TABLE_NAME, null, values)
+        val values = ContentValues().apply {
+            put(COLUMN_NAME, task.name)
+            put(COLUMN_DATE, task.date)
+            put(COLUMN_TIME, task.time)
+        }
+
+        db.insert(TABLE_NAME, null, values)
         db.close()
-        return (Integer.parseInt("$_Success") != -1)
     }
 //    fun deleteTask(_id:Int) : Boolean{
 //        val db: SQLiteDatabase = this.writableDatabase

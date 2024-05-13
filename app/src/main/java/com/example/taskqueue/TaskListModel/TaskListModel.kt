@@ -1,6 +1,6 @@
 package com.example.taskqueue.TaskListModel
 
-class TaskListModel(
+data class TaskListModel(
     var id: Int,
     var name: String,
     var date: String,

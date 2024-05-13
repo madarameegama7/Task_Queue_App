@@ -2,21 +2,22 @@ package com.example.taskqueue
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.taskqueue.databinding.ActivityMain3Binding
 
 class MainActivity3 : AppCompatActivity() {
-    private lateinit var button2: Button
+    private lateinit var binding: ActivityMain3Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main3)
+        binding = ActivityMain3Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        button2= findViewById(R.id.button2)
 
-        button2.setOnClickListener{
-            startActivity(Intent(this,AddTask::class.java))
+
+        binding.button2.setOnClickListener{
+           val intent = Intent(this,AddTask::class.java)
+           startActivity(intent)
         }
 
     }
