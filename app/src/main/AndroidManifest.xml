@@ -13,9 +13,11 @@
         android:theme="@style/Theme.TaskQueue"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity3"
             android:exported="true" />
-
         <activity
             android:name=".AddTask"
             android:exported="true" />
