@@ -41,30 +41,30 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
         db.insert(TABLE_NAME, null, values)
         db.close()
     }
-//    fun deleteTask(_id:Int) : Boolean{
-//        val db: SQLiteDatabase = this.writableDatabase
-//    }
+
+    fun getAllTasks() : List<TaskListModel> {
+        val taskList = mutableListOf<TaskListModel>()
+
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query,null)
+
+        while (cursor.moveToNext()){
+            val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+            val name = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
+            val date = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DATE))
+            val time = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIME))
+
+            val task=TaskListModel(id,name,date,time)
+            taskList.add(task)
+        }
+        cursor.close()
+        db.close()
+        return taskList
+
+    }
 }
 
-//    fun getTask(_id: Int): Tasks {
-//        val db: SQLiteDatabase = writableDatabase
-//        val selectQuery = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $_id"
-//        val cursor = db.rawQuery(selectQuery, null)
-//
-//        val task = Tasks() // Instantiate a Tasks object
-//
-//        if (cursor != null) {
-//            if (cursor.moveToFirst()) {
-//                task.id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID))
-//                task.name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME))
-//                task.date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE))
-//                task.time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME))
-//            }
-//            cursor.close()
-//            return task
-//        }
-//
-//    }
 
 
 
@@ -75,32 +75,5 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
 
 
 
-
-
-//    fun getAllTasks(): List<TaskListModel> {
-//        val taskList = ArrayList<TaskListModel>() // Corrected ArrayList declaration
-//        val db : SQLiteDatabase? = writableDatabase
-//
-//        val selectQuery = "SELECT * FROM $TABLE_NAME"
-//        val cursor = db.rawQuery(selectQuery, null)
-//
-//        if (cursor != null) {
-//            if (cursor.moveToFirst()) {
-//                do {
-//                    val task = Tasks(
-//                        id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID)),
-//                        name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),
-//                        date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE)),
-//                        time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME))
-//                    )
-//                    taskList.add(task)
-//                } while (cursor.moveToNext())
-//
-//            }
-//            cursor.close()
-//        }
-//        db.close()
-//        return taskList // Added return statement
-//    }
 
 
