@@ -81,6 +81,9 @@
         android:hint="@string/task_name"
         android:inputType="textMultiLine" />
 
+
+
+
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="226dp"
@@ -94,18 +97,30 @@
         android:hint="@string/date"
         android:inputType="text" />
 
+    <Button
+        android:id="@+id/btnShowDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="381dp"
+        android:text="Show Date Picker" />
+
     <EditText
         android:id="@+id/editTextTime"
         android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="97dp"
-        android:layout_marginBottom="353dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="299dp"
         android:ems="10"
         android:fontFamily="sans-serif-medium"
         android:hint="@string/time"
         android:inputType="text" />
+
+
 
     <ImageView
         android:id="@+id/imageView5"
@@ -113,10 +128,11 @@
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="311dp"
-        android:layout_marginBottom="352dp"
-        app:srcCompat="@drawable/baseline_access_time_24"
-        android:contentDescription="@string/todo2" />
+        android:layout_marginEnd="309dp"
+        android:layout_marginBottom="302dp"
+        android:contentDescription="@string/todo2"
+        app:srcCompat="@drawable/baseline_access_time_24" />
+
 
     <Button
         android:id="@+id/button"
@@ -124,9 +140,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="267dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="107dp"
         android:text="@string/add_to_tasks" />
+
+
+    <Button
+        android:id="@+id/btnShowTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="239dp"
+        android:text="Show Time Picker" />
 
 
 </RelativeLayout>
