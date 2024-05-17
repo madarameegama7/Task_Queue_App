@@ -23,6 +23,7 @@ class TasksAdapter(private var tasks: List<TaskListModel>, context: Context):
             val deleteButton: ImageView = itemView.findViewById(R.id.deleteButton)
 
 
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TasksViewHolder {

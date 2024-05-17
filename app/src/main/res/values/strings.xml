@@ -12,4 +12,6 @@
     <string name="todo3">TODO</string>
     <string name="queue2">queue</string>
     <string name="task3">task</string>
+    <string name="channel_name">TaskQueue Notifications</string>
+    <string name="channel_description">Notifications for TaskQueue App</string>
 </resources>
