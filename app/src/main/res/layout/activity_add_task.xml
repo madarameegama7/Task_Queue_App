@@ -95,7 +95,7 @@
         android:ems="10"
         android:fontFamily="sans-serif-medium"
         android:hint="@string/date"
-        android:inputType="text" />
+        android:inputType="date" />
 
     <Button
         android:id="@+id/btnShowDatePicker"
@@ -118,7 +118,7 @@
         android:ems="10"
         android:fontFamily="sans-serif-medium"
         android:hint="@string/time"
-        android:inputType="text" />
+        android:inputType="time" />
 
 
 
@@ -154,6 +154,7 @@
         android:layout_marginEnd="121dp"
         android:layout_marginBottom="239dp"
         android:text="Show Time Picker" />
+
 
 
 </RelativeLayout>
